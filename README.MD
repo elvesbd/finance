@@ -1,9 +1,11 @@
 <h1 align="center">dev.finance💰</h1>
 
-<span align="center"><img src="public/finance.png"/></span>
+<span align="center">
+<img src="public/finance.png"/>
+<img src="public/finance1.png"/></span>
 
 ## 📝 Sobre
-Aplicação financeira de entradas e saidas, desenvolvida na maratona Discover promovido pela [Rocketseat](https://www.rocketseat.com.br).
+Aplicação financeira de entradas e saidas, desenvolvida na maratona Discover promovido pela [Rocketseat](https://www.rocketseat.com.br). Fiz uma pequena alteração deixando o valor total das transações dinâmicos, assim quando o saldo total vier a ficar negativo o usuário vai ver em destaque na cor vermelha que seu saldo está negativo. Acrescentado icones de lixeira para excluir uma transação.
 
 ---
 
