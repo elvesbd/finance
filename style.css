@@ -51,6 +51,11 @@ a {
   text-decoration: none;
 }
 
+a.remove {
+  color: var(--red);
+  text-decoration: none;
+}
+
 a:hover {
   color: var(--light-green);
 }
@@ -70,7 +75,7 @@ button:hover {
   background: var(--light-green);
 }
 
-.button.new {
+.button.newAdd {
   display: inline-block;
   margin-bottom: 0.8rem;
 }
@@ -140,6 +145,11 @@ header {
   color: #fff;
 }
 
+.card.total.negativo {
+  background: var(--red);
+  color: #fff;
+}
+
 /*TABLE*/
 #transaction {
   display: block;
@@ -151,6 +161,11 @@ header {
   width: 100%;
   border-spacing: 0 0.5rem;
   color: #969cb3;
+}
+
+#data-table img {
+  width: 25px;
+  height: 25px;
 }
 
 table th {
@@ -196,6 +211,12 @@ td.expense {
   color: #e92929;
 }
 
+td.trashIcon {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
 /*MODAL*/
 .modal-overlay {
   width: 100%;
@@ -213,6 +234,7 @@ td.expense {
 .modal-overlay.active {
   opacity: 1;
   visibility: visible;
+  z-index: 999;
 }
 
 .modal {
@@ -263,8 +285,7 @@ footer {
   padding: 4rem 0 2rem;
   color: var(--color-card);
   opacity: 0.6;
-  z-index: 1;
-}
+} 
 
 /*RESPONSIVE*/
 @media (min-width: 800px) {/*a partir de 800 aplica*/
