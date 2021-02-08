@@ -51,7 +51,16 @@ const Transaction = {
   },
 
   total() {
-    return Transaction.incomes() + Transaction.expenses();
+    const result = Transaction.incomes() + Transaction.expenses();
+    const selectTotal = document.getElementById('teste');
+    
+    if (result < 0) {
+      selectTotal.classList.add('negativo');
+    } else {
+      selectTotal.classList.remove('negativo');
+    }
+    
+    return result;
   }
 };
 
@@ -75,7 +84,7 @@ const DOM = {
       <td class="description">${transaction.description}</td>
       <td class="${CSSclass}">${amount}</td>
       <td class="date">${transaction.date}</td>
-      <td><img onclick="Transaction.remove(${index})" src="./assets//minus.svg" alt="Remover transação"></td>
+      <td class="trashIcon"><img onclick="Transaction.remove(${index})" src="./assets/trash.svg"  alt="Remover transação"></td>
     `
     return html;
   },
@@ -98,9 +107,8 @@ const utils = {
   },
 
   formatAmount(value) {
-    value = Number(value) * 100;
-
-    return value
+    value = value * 100;
+    return Math.round(value);
   },
 
   formatCurrency(value) {
@@ -137,7 +145,7 @@ const Form = {
   },
 
   formatValues() {
-    let { description, amount,date } = Form.getValues();
+    let { description, amount, date } = Form.getValues();
 
     amount = utils.formatAmount(amount);
     date = utils.formatDate(date);
@@ -184,3 +192,4 @@ const App = {
 };
 
 App.init();
+
